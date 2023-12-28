@@ -6,51 +6,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Footer from "../Components/Footer";
 
 const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      showNextSlide();
-    }, 1  000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentSlide]);
-
-  const showNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % 5); // Assuming you have 5 slides
-  };
-
-  return (
+return (
     <div className="home-container">
       <Navbar />
       <div className="home-banner-container">
 
       <div id="slider">
-        <ul id="slideWrap" style={{ left: `-${currentSlide * 100}%` }}>
-          <li>
-            <img src={Image1} alt="" />
-          </li>
-          <li>
-            <img src={Image1} alt="" />
-          </li>
-          <li>
-            <img src={Image1} alt="" />
-          </li>
-          <li>
-            <img src={Image1} alt="" />
-          </li>
-          <li>
-            <img src={Image1} alt="" />
-          </li>
-        </ul>
-        <a id="prev" href="#" onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + 5) % 5)}>
-          &#8810;
-        </a>
-        <a id="next" href="#" onClick={showNextSlide}>
-          &#8811;
-        </a>
+        <img src={Image1} alt="" />
       </div>
         <div className="text-box">
             <h1>Extensive and versatile events space</h1>
